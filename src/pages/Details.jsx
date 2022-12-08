@@ -18,21 +18,23 @@ const Details = () => {
   return (
     <StContainer>
       <StDialog>
-        <div>
-          <StDialogHeader>
-            <div>ID :{todo.id}</div>
-            <StButton
-              borderColor="#ddd"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              이전으로
-            </StButton>
-          </StDialogHeader>
-          <StTitle>{todo.title}</StTitle>
-          <StBody>{todo.body}</StBody>
-        </div>
+        {todo && (
+          <div>
+            <StDialogHeader>
+              <div>ID :{todo.id}</div>
+              <StButton
+                borderColor="#ddd"
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                이전으로
+              </StButton>
+            </StDialogHeader>
+            <StTitle>{todo.title}</StTitle>
+            <StBody>{todo.body}</StBody>
+          </div>
+        )}
       </StDialog>
     </StContainer>
   );
